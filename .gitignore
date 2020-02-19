@@ -1,0 +1,7 @@
+.idea/
+imgutils_background_subtraction/.DS_Store
+object_detection_imageai/models
+object_prediction_imageai/models
+cvlib_matpotlib/yolov3.weights
+video_detection_imageai/models
+video_detection_imageai/videos
