@@ -135,7 +135,7 @@ Edge Detection after adding sharpness filter using GaussianBlur
 - https://github.com/opencv/opencv
 - https://docs.opencv.org/master/d9/df8/tutorial_root.html
 - https://learning.oreilly.com/library/view/computer-vision-with/
-
+- https://omscs.gatech.edu/cs-6476-computer-vision-course-videos
 
 ## debug 
 
