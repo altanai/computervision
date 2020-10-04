@@ -62,7 +62,7 @@ def unsharp_mask(image, kernel_size=(5, 5), sigma=1.0, amount=1.0, threshold=0):
 
 # main logic
 
-image = _cv2.imread("imgs/2.jpg")
+image = _cv2.imread("../imgs/2.jpg")
 
 # print the dimensions
 print(image.shape)

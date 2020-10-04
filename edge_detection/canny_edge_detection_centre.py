@@ -53,7 +53,7 @@ def unsharp_mask(image, kernel_size=(5, 5), sigma=1.0, amount=1.0, threshold=0):
 
 
 sharpened_image = unsharp_mask(image)
-_cv2.imwrite('3_sharpened.jpeg', sharpened_image)
+_cv2.imwrite('../3_sharpened.jpeg', sharpened_image)
 # whole image
 edges = _cv2.Canny(sharpened_image, h, w)
 
@@ -61,7 +61,7 @@ edges = _cv2.Canny(sharpened_image, h, w)
 # edges = _cv2.Canny(image,end_row,end_col)
 _cv2.imshow('Edges', edges)
 
-image_path_processed = 'imgs/3_edges.jpeg'
+image_path_processed = '../imgs/3_edges.jpeg'
 _cv2.imwrite(image_path_processed, edges)
 
 _cv2.waitKey()
