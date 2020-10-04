@@ -1,6 +1,6 @@
 import cv2 as _cv2
 
-image = _cv2.imread("imgs/3.jpeg")
+image = _cv2.imread("../imgs/3.jpeg")
 
 # print the dimensions
 print(image.shape)

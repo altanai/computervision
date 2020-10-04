@@ -24,7 +24,7 @@ def draw_grid(img, line_color=(0, 255, 0), thickness=3, type_=_cv2.LINE_AA, pxst
         y += pystep
 
 
-image = _cv2.imread("imgs/3.jpeg")
+image = _cv2.imread("../imgs/3.jpeg")
 
 # print the dimensions
 print(image.shape)
@@ -37,5 +37,5 @@ py = int(image.shape[0] / 3)
 # get grids
 draw_grid(image,(0, 255, 0),2, 4, px, py)
 
-image_path_processed = 'imgs/3_processed.jpeg'
+image_path_processed = '../imgs/3_processed.jpeg'
 _cv2.imwrite(image_path_processed, image)

@@ -34,7 +34,7 @@ def crop(img, pxstep=1000, pystep=1000):
         y += pystep
 
 
-image = _cv2.imread("imgs/3.jpeg")
+image = _cv2.imread("../imgs/3.jpeg")
 
 h = image.shape[0]
 w = image.shape[1]

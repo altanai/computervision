@@ -79,7 +79,7 @@ def crop(img, pxstep=1000, pystep=1000):
         y += pystep
 
 
-image = _cv2.imread("imgs/3.jpeg")
+image = _cv2.imread("../imgs/3.jpeg")
 
 h = image.shape[0]
 w = image.shape[1]
@@ -93,7 +93,7 @@ print("height of each grid box ", (py, 'pixels'))
 
 # get grids
 draw_grid(image, (0, 255, 0), 2, 4, px, py)
-image_path_processed = 'imgs/3_processed_3x2.jpeg'
+image_path_processed = '../imgs/3_processed_3x2.jpeg'
 _cv2.imwrite(image_path_processed, image)
 
 # crop into 3x2 boxes

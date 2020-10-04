@@ -12,7 +12,7 @@ dining table,   toilet,   tv,   laptop,   mouse,   remote,   keyboard,   cell ph
 oven,   toaster,   sink,   refrigerator,   book,   clock,   vase,   scissors,   teddy bear,   hair dryer,
 toothbrush. 
 
-## PreRequisiies 
+## Pre-Requisites 
 
 CVlib - open source Computer Vision library for Python.
 
