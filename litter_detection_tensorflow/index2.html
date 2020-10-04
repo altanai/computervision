@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+</head>
+<body>
+<div>Model_Litter_Identification_classification</div>
+
+<video id="sample_video" src="../../litter_road_sample_video/vid1.mp4" height="500px"
+       controls ></video>
+<canvas id="sample_canvas"></canvas>
+
+<div id="label-container"></div>
+
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function(){
+
+    var video = document.getElementById('sample_video');
+    var canvas = document.getElementById('sample_canvas');
+    var context = canvas.getContext('2d');
+
+    var cw = Math.floor(canvas.clientWidth / 100);
+    var ch = Math.floor(canvas.clientHeight / 100);
+    canvas.width = cw;
+    canvas.height = ch;
+
+    video.addEventListener('play', function(){
+        draw(this,context,cw,ch);
+        predict();
+    },false);
+
+},false);
+
+function draw(v,c,w,h) {
+    if(v.paused || v.ended) return false;
+    c.drawImage(v,0,0,w,h);
+    predict();
+    setTimeout(draw,20,v,c,w,h);
+}
+
+
+
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "./Model_Litter_Identification_classification/";
+
+    let model, labelContainer, maxPredictions;
+
+    // load the model and metadata
+    async function loadmodel(){
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+        model = await tmImage.load(modelURL, metadataURL);
+    }
+
+    (async() => {
+        await loadmodel();
+        maxPredictions = model.getTotalClasses();
+
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) {
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    })();
+
+    async function predict() {
+
+        // predict can take in an image, video or canvas html element
+        var canvas = document.getElementById('sample_canvas');
+        const prediction = await model.predict(sample_canvas);
+
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+    }
+
+</script>
+
+</body>
+</html>
