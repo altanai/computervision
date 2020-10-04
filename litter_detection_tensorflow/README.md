@@ -1,5 +1,9 @@
 # Pre-Trained Litter detection Model
 
+Video based object detection 
+
+![vid](output/test_try1.gif)
+
 ## False positives 
 
 ![l1](output/l1.png)
